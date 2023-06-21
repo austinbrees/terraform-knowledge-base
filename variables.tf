@@ -64,14 +64,6 @@ variable "location_id" {
   description = "The region to deploy to"
   type        = string
 }
-variable "github_owner" {
-  description = "The owner of the GitHub repository"
-  type        = string
-}
-variable "github_repo" {
-  description = "The name of the GitHub repository"
-  type        = string
-}
 variable "service_account_email" {
   description = "The email address of the service account"
   type        = string
