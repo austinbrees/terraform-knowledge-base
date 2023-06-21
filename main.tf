@@ -23,6 +23,7 @@ provider "google" {
   credentials = base64decode(var.credentials)
 }
 
+
 provider "cloudflare" {
   api_token = var.cloudflare_api_token
 }
