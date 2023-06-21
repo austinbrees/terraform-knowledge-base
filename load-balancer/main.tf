@@ -1,6 +1,6 @@
 # Add the bucket as a CDN backend
 resource "google_compute_backend_bucket" "website" {
-  name        = "website-backend"
+  name        = "website-backend-v2"
   description = "Contains files needed by the website"
   bucket_name = var.bucket_name
   enable_cdn  = true
