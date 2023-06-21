@@ -52,15 +52,15 @@ variable "bucket_location" {
   description = "The location of the GCS bucket"
   type        = string
 }
-variable "project" { 
+variable "project" {
   description = "The project ID to deploy to"
   type        = string
 }
-variable "region" { 
+variable "region" {
   description = "The region to deploy to"
   type        = string
 }
-variable "location_id" { 
+variable "location_id" {
   description = "The region to deploy to"
   type        = string
 }
@@ -70,7 +70,7 @@ variable "github_owner" {
 }
 variable "github_repo" {
   description = "The name of the GitHub repository"
-  type        = string 
+  type        = string
 }
 variable "service_account_email" {
   description = "The email address of the service account"
@@ -79,11 +79,11 @@ variable "service_account_email" {
 variable "repository" {
   description = "The name of the Cloud Source Repository"
   type        = string
-  
+
 }
 variable "location" {
-    description = "value for location"
-    type        = string
+  description = "value for location"
+  type        = string
 }
 variable "api_id" {
   description = "The ID of the API to create"
