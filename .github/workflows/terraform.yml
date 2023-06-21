@@ -40,8 +40,6 @@ jobs:
       TF_VAR_project: ${{ secrets.project }}
       TF_VAR_region: ${{ secrets.region }}
       TF_VAR_location_id: ${{ secrets.location_id }}
-      TF_VAR_github_owner: ${{ secrets.github_owner }}
-      TF_VAR_github_repo: ${{ secrets.github_repo }}
       TF_VAR_service_account_email: ${{ secrets.service_account_email }}
       TF_VAR_repository: ${{ secrets.repository }}
       TF_VAR_location: ${{ secrets.location }}

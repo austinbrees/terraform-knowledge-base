@@ -15,7 +15,7 @@ terraform {
 provider "google" {
   project     = var.project
   region      = var.region
-  credentials = jsondecode(base64decode(var.credentials))
+  credentials = base64decode(var.credentials)
 }
 
 provider "cloudflare" {
@@ -24,7 +24,7 @@ provider "cloudflare" {
 provider "google-beta" {
   project     = var.project
   region      = var.region
-  credentials = jsondecode(base64decode(var.credentials))
+  credentials = base64decode(var.credentials)
 }
 
 
@@ -70,7 +70,6 @@ module "api" {
   depends_on = [module.firestore]
   project = var.project
   location = var.location
-  github_owner = var.github_owner
   service_account_email = var.service_account_email
   repository = var.repository
   image = var.image
