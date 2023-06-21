@@ -10,13 +10,13 @@ resource "google_compute_global_address" "default" {
   name = var.global_address_name
 }
 
-# Create HTTPS certificate
-# resource "google_compute_managed_ssl_certificate" "website" {
-#   name     = "website-cert"
-#   managed {
-#     domains = [var.domain_name]
-#   }
-#
+Create HTTPS certificate
+resource "google_compute_managed_ssl_certificate" "website" {
+  name     = "website-cert"
+  managed {
+    domains = [var.domain_name]
+  }
+}
 
 # GCP URL MAP
 resource "google_compute_url_map" "website" {
