@@ -12,7 +12,7 @@ terraform {
   }
   backend "gcs" {
     bucket = "cloud-resume-terraform-state"
-    credentials = credentials.json
+    credentials = "credentials.json"
 
     }
 }
