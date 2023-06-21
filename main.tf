@@ -1,7 +1,4 @@
 terraform { 
-    backend "gcs" {
-    bucket = "cloud-resume-terraform-state"
-    }
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -13,6 +10,9 @@ terraform {
       source = "hashicorp/google-beta"
     }
   }
+  backend "gcs" {
+    bucket = "cloud-resume-terraform-state"
+    }
 }
 
 
