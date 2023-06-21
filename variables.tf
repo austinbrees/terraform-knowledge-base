@@ -101,3 +101,7 @@ variable "image" {
   description = "The URL of the container image"
   type        = string
 }
+variable "credentials" {
+  description = "The credentials for the service account"
+  type        = string
+}
