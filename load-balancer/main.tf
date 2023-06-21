@@ -1,22 +1,22 @@
-# Add the bucket as a CDN backend
-# resource "google_compute_backend_bucket" "website" {
-#   name        = "website-backend-v2"
-#   description = "Contains files needed by the website"
-#   bucket_name = var.bucket_name
-#   enable_cdn  = true
-# }
+#Add the bucket as a CDN backend
+resource "google_compute_backend_bucket" "website" {
+  name        = "website-backend-v2"
+  description = "Contains files needed by the website"
+  bucket_name = var.bucket_name
+  enable_cdn  = true
+}
 
-# resource "google_compute_global_address" "default" {
-#   name = var.global_address_name
-# }
+resource "google_compute_global_address" "default" {
+  name = var.global_address_name
+}
 
-# #Create HTTPS certificate
-# resource "google_compute_managed_ssl_certificate" "website" {
-#   name     = "website-cert"
-#   managed {
-#     domains = [var.domain_name]
-#   }
-# }
+#Create HTTPS certificate
+resource "google_compute_managed_ssl_certificate" "website" {
+  name     = "website-cert"
+  managed {
+    domains = [var.domain_name]
+  }
+}
 
 # GCP URL MAP
 resource "google_compute_url_map" "website" {
