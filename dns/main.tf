@@ -12,6 +12,10 @@ resource "cloudflare_record" "a_record" {
   value   = var.ip_address
   type    = "A"
   ttl     = 1
+
+  lifecycle {
+    ignore_changes = all
+  }
 }
 
 resource "cloudflare_record" "cname_record" {
@@ -21,4 +25,9 @@ resource "cloudflare_record" "cname_record" {
   type    = "CNAME"
   proxied = false
   ttl     = 1
+
+  lifecycle {
+    ignore_changes = all
+  }
 }
+

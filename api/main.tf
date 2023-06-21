@@ -5,7 +5,7 @@ data "google_cloudbuild_trigger" "existing" {
 }
 
 resource "google_cloud_run_service" "flask_app" {
-  name     = "backend-service-v2"
+  name     = "backend-service"
   location = var.location
 
   template {
@@ -19,6 +19,10 @@ resource "google_cloud_run_service" "flask_app" {
   traffic {
     percent         = 100
     latest_revision = true
+  }
+
+  lifecycle {
+    ignore_changes = all
   }
 }
 

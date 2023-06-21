@@ -1,5 +1,9 @@
 resource "google_project_service" "firestore" {
   service = "firestore.googleapis.com"
+  
+  lifecycle {
+    ignore_changes = all
+  }
 }
 
 resource "google_firestore_document" "counter" {
@@ -13,4 +17,8 @@ resource "google_firestore_document" "counter" {
     }
     EOF
   depends_on = [google_project_service.firestore]
+
+  lifecycle {
+    ignore_changes = all
+  }
 }
