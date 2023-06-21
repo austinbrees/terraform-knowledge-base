@@ -10,7 +10,7 @@ resource "google_compute_global_address" "default" {
   name = var.global_address_name
 }
 
-Create HTTPS certificate
+#Create HTTPS certificate
 resource "google_compute_managed_ssl_certificate" "website" {
   name     = "website-cert"
   managed {
