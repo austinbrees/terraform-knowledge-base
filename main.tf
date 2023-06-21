@@ -26,8 +26,7 @@ provider "google-beta" {
   region      = var.region
   credentials = base64decode(var.credentials)
 }
-
-
+# chages made 
 module "gcs-bucket" {
   source          = "./gcs-bucket"
   bucket_name     = var.bucket_name
