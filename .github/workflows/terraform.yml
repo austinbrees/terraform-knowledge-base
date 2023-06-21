@@ -4,9 +4,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**.tf'
   pull_request:
     branches:
       - main
+    paths:
+      - '**.tf'
+
 
 permissions:
   contents: read
@@ -21,7 +26,30 @@ jobs:
       TF_VAR_bucket_name: ${{ secrets.bucket_name }}
       TF_VAR_bucket_location: ${{ secrets.bucket_location }}
       TF_VAR_main_page_suffix: ${{ secrets.main_page_suffix }}
-      
+      TF_VAR_source: ${{ secrets.source }}
+      TF_VAR_dns_zone_name: ${{ secrets.dns_zone_name }}
+      TF_VAR_dns_name: ${{ secrets.dns_name }}
+      TF_VAR_global_address_name: ${{ secrets.global_address_name }}
+      TF_VAR_ssl_certificate_name: ${{ secrets.ssl_certificate_name }}
+      TF_VAR_domain_name: ${{ secrets.domain_name }}
+      TF_VAR_https_proxy_name: ${{ secrets.https_proxy_name }}
+      TF_VAR_forwarding_rule_name: ${{ secrets.forwarding_rule_name }}
+      TF_VAR_cloudflare_email: ${{ secrets.cloudflare_email }}
+      TF_VAR_cloudflare_api_token: ${{ secrets.cloudflare_api_token }}
+      TF_VAR_cloudflare_zone_id: ${{ secrets.cloudflare_zone_id }}
+      TF_VAR_project: ${{ secrets.project }}
+      TF_VAR_region: ${{ secrets.region }}
+      TF_VAR_location_id: ${{ secrets.location_id }}
+      TF_VAR_github_owner: ${{ secrets.github_owner }}
+      TF_VAR_github_repo: ${{ secrets.github_repo }}
+      TF_VAR_service_account_email: ${{ secrets.service_account_email }}
+      TF_VAR_repository: ${{ secrets.repository }}
+      TF_VAR_location: ${{ secrets.location }}
+      TF_VAR_gateway_id: ${{ secrets.gateway_id }}
+      TF_VAR_service_account: ${{ secrets.service_account }}
+      TF_VAR_image: ${{ secrets.image }}
+      TF_VAR_credentials: ${{ secrets.GCP_CREDENTIALS }}
+    
 
     defaults:
       run:

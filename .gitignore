@@ -33,3 +33,4 @@ terraform/api-gateway/api-spec.yaml
 .terraform.lock.hcl
 
 api-gateway/api-spec.yaml
+credentials-copy.json

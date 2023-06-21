@@ -15,7 +15,7 @@ terraform {
 provider "google" {
   project     = var.project
   region      = var.region
-  credentials = file("credentials.json")
+  credentials = jsondecode(base64decode(var.credentials))
 }
 
 provider "cloudflare" {
@@ -24,7 +24,7 @@ provider "cloudflare" {
 provider "google-beta" {
   project     = var.project
   region      = var.region
-  credentials = file("credentials.json")
+  credentials = jsondecode(base64decode(var.credentials))
 }
 
 
@@ -71,7 +71,6 @@ module "api" {
   project = var.project
   location = var.location
   github_owner = var.github_owner
-  github_repo = var.github_repo
   service_account_email = var.service_account_email
   repository = var.repository
   image = var.image
