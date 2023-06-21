@@ -1,0 +1,35 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+credentials.json
+# Crash log files
+crash.log
+
+# Ignore all .tfvars files, which are likely to contain sentitive data,
+# such as password, private keys, and other secrets. These should not be part of version control
+*.tfvars
+
+# Ignore override files as they are usually used for local settings
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Google Cloud credentials file
+terraform/credentials.json
+terraform/.terraform.lock.hcl
+
+terraform/api-gateway/api-spec.yaml
+
+*/.venv/*
+.terraform.lock.hcl
+
+api-gateway/api-spec.yaml
