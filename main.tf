@@ -1,4 +1,7 @@
-terraform {
+terraform { 
+    backend "gcs" {
+    bucket = "cloud-resume-terraform-state"
+    }
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -11,6 +14,7 @@ terraform {
     }
   }
 }
+
 
 provider "google" {
   project     = var.project
