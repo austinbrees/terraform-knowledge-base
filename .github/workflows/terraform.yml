@@ -57,6 +57,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
+      - name: Set GOOGLE_CREDENTIALS
+        run: echo "${{ secrets.GCP_CREDENTIALS }}" | base64 --decode > credentials.json
+      
       - name: Create API Spec file
         run: echo "${{ secrets.API_SPEC_SECRET }}" | base64 --decode > api-spec.yml
 
