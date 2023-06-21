@@ -73,7 +73,7 @@ jobs:
         run: terraform init
 
       - name: Import existing resources
-        run: terraform import module.load-balancer.google_compute_global_address.default GLOBAL_ADDRESS_ID
+        run: terraform import module.load-balancer.google_compute_global_address.default ahb-cloud-challenge-global-address
   
       - name: Terraform Format
         run: terraform fmt -check
