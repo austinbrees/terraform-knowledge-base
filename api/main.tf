@@ -5,7 +5,7 @@ data "google_cloudbuild_trigger" "existing" {
 }
 
 resource "google_cloud_run_service" "flask_app" {
-  name     = "my-cloud-run-service"
+  name     = "backend-service-v2"
   location = var.location
 
   template {
