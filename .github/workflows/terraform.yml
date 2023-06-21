@@ -57,8 +57,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Import Global Address
-        run: terraform import module.load-balancer.google_compute_global_address.default GLOBAL_ADDRESS_ID
       - name: Set GOOGLE_CREDENTIALS
         run: echo "${{ secrets.GCP_CREDENTIALS }}" | base64 --decode > credentials.json
       
@@ -74,6 +72,9 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
+      - name: Import existing resources
+        run: terraform import module.load-balancer.google_compute_global_address.default GLOBAL_ADDRESS_ID
+  
       - name: Terraform Format
         run: terraform fmt -check
 
