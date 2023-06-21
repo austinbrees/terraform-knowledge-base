@@ -1,4 +1,4 @@
-terraform { 
+terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -11,10 +11,10 @@ terraform {
     }
   }
   backend "gcs" {
-    bucket = "cloud-resume-terraform-state"
+    bucket      = "cloud-resume-terraform-state"
     credentials = "credentials.json"
 
-    }
+  }
 }
 
 provider "google" {
