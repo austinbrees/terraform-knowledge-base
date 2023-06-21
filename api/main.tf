@@ -20,9 +20,5 @@ resource "google_cloud_run_service" "flask_app" {
     percent         = 100
     latest_revision = true
   }
-
-  lifecycle {
-    ignore_changes = all
-  }
 }
 
