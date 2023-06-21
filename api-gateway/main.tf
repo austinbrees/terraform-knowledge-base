@@ -10,8 +10,9 @@ resource "google_api_gateway_api_config" "api_gw" {
 
   openapi_documents {
     document {
-      path = "terraform/api-gateway/api-spec.yaml"
-      contents = filebase64("api-gateway/api-spec.yaml")
+    path = "api-spec.yml"
+    contents = filebase64("api-spec.yml")
+
     }
   }
   lifecycle {
