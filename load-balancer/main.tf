@@ -17,7 +17,8 @@ resource "google_compute_managed_ssl_certificate" "website" {
     domains = [var.domain_name]
   }
 }
-
+ 
+ 
 # GCP URL MAP
 resource "google_compute_url_map" "website" {
   name            = "website-url-map"
