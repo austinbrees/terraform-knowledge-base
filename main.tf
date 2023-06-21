@@ -45,17 +45,17 @@ module "load-balancer" {
   depends_on = [module.gcs-bucket]
 }
 
-module "dns" {
-  source               = "./dns"
-  cloudflare_api_token = var.cloudflare_api_token
-  cloudflare_zone_id   = var.cloudflare_zone_id
-  domain_name          = var.domain_name
-  global_address_name  = var.global_address_name
-  ip_address           = module.load-balancer.ip_address
-  providers = {
-    cloudflare = cloudflare
-  }
-}
+# module "dns" {
+#   source               = "./dns"
+#   cloudflare_api_token = var.cloudflare_api_token
+#   cloudflare_zone_id   = var.cloudflare_zone_id
+#   domain_name          = var.domain_name
+#   global_address_name  = var.global_address_name
+#   ip_address           = module.load-balancer.ip_address
+#   providers = {
+#     cloudflare = cloudflare
+#   }
+# }
 
 
 module "firestore" {
