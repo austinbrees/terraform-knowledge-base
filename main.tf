@@ -12,6 +12,8 @@ terraform {
   }
   backend "gcs" {
     bucket = "cloud-resume-terraform-state"
+    credentials = base64decode(var.credentials)
+
     }
 }
 
